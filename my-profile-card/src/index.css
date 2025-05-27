@@ -34,12 +34,12 @@ body {
       }
     }
 
-    .stack-container {
+    .skill-container {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
 
-      .stack {
+      .skill {
         padding: 8px;
         border-radius: 4px;
         font-size: 14px;

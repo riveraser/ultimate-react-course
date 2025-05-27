@@ -8,6 +8,10 @@ Must create a Profile card similar to:
 
 Adding component for each logic text
 
+## Results:
+
+![alt](public/results.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
