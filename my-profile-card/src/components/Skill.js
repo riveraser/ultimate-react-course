@@ -4,12 +4,16 @@ export default function Skill({ icon, bgColor, name, level }) {
   // Get the icon component dynamically
   const IconComponent = IoIcons[icon];
 
+  const levelIcon = {
+    begginer: "👶",
+    intermediate: "👍",
+    advanced: "💪",
+  };
+
   return (
     <div className="skill" key={name} style={{ backgroundColor: bgColor }}>
       {name.toUpperCase()} {IconComponent && <IconComponent />}
-      <span className="level">{level === "begginer" && "👶"}</span>
-      <span className="level">{level === "intermediate" && "👍"}</span>
-      <span className="level">{level === "advanced" && "💪"}</span>
+      <span className="level">{levelIcon[level]}</span>
     </div>
   );
 }
