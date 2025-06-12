@@ -32,7 +32,8 @@ export default function Counter() {
       <div className="date">
         <p>
           <span>
-            {count} days from today is {count > 0 ? "in" : "ago"}{" "}
+            Today is {Math.abs(count)}
+            {count > 0 ? ` days from today is ` : " days ago was "}{" "}
             {calculateDate()}
           </span>
         </p>
