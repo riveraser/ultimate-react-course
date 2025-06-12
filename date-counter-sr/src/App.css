@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+.step {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+}
+.counter {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+.date {
+  margin-top: 24px;
+  border: 1px solid #e7e7e7;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
+  margin: 12px;
+}
