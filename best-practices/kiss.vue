@@ -55,26 +55,17 @@ const isNewProject = computed(() => {
   const isRecentlyCreated = timeDifferenceInSeconds <= 5;
 
   const noJobVersions = jobVersionsService.jobVersions.length === 0;
-
-  // Edge case: some times the side effect creates the first version when the user lands on the form
+  
+  // Edge case
   const isOneJobVersion = jobVersionsService.jobVersions.length === 1;
-  const isRecentlyVersionCreated =
-    isOneJobVersion &&
-    Math.abs(
-      new Date(jobVersionsService.jobVersions[0].createTs).getTime() -
-        createTime
-    ) /
-      1000 <=
-      5;
+  const jobVersionCreateTime = new Date(jobVersionsService.jobVersions[0].createTs).getTime();
+  const isRecentlyVersionCreated = 
+    isOneJobVersion && Math.abs(jobVersionCreateTime - createTime) / 1000 <= 5;
 
   const projectTitle = (project.value.title || "").trim().toLowerCase();
   const hasDefaultOrNoTitle = !projectTitle || projectTitle === "no title";
 
-  return (
-    (noJobVersions || isRecentlyVersionCreated) &&
-    isRecentlyCreated &&
-    hasDefaultOrNoTitle
-  );
+  return (noJobVersions || isRecentlyVersionCreated) && isRecentlyCreated && hasDefaultOrNoTitle;
 });
 </script>
 <template>
